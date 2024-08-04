@@ -1,7 +1,9 @@
 <template>
 	<NuxtLayout name="auth" :subtitle="'Um lugar seguro para todas as suas fotos'">
 		<Form @submit="onSendMail" :validation-schema="schema">
-			<!-- <DangerAlert @closeAlert="onCloseAlert" v-if="message" :message="message" />-->
+
+			<!-- <Alert v-if="successMessage" @closeAlert="onCloseAlert" :message="successMessage" /> -->
+			<!-- <Alert v-if="errorMessage" @closeAlert="onCloseAlert" :message="errorMessage" /> -->
 					
 			<InputGroup :type="'email'" :id="'email'" :label="'Email'" :name="'email'" />
 			<ErrorMessage name="email" class="text-sm font-bold text-red-900" />
@@ -32,6 +34,8 @@ const schema = yup.object({
 
 //
 const email = ref()
+const successMessage = ref()
+const errorMessage = ref()
 
 const onSendMail = () => {
 	//

@@ -2,7 +2,7 @@
 	<NuxtLayout name="auth" :subtitle="'Um lugar seguro para todas as suas fotos'">
 		<Form @submit="onRegister" :validation-schema="schema">
 
-			<DangerAlert @closeAlert="onCloseAlert" v-if="message" :message="message" />
+			<!-- <Alert v-if="errorMessage" @closeAlert="onCloseAlert" :message="errorMessage" />-->
 			
 			<InputGroup @inputChange="onChangeName" type="text" id="name" label="Nome Completo" name="name" required="true" />
 			<ErrorMessage name="name" class="text-sm font-bold text-red-900" />
@@ -44,6 +44,7 @@ const schema = yup.object({
 const email = ref()
 const password = ref()
 const name = ref()
+const errorMessage = ref()
 
 const onLogin = () => {
 	//

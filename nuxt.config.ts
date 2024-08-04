@@ -2,8 +2,27 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
+  devServer: {
+    port: Number(process.env.APP_PORT)
+  },
+  modules: [
+    "@nuxtjs/tailwindcss",
+    '@nuxtjs/color-mode',
+    "@nuxt/image",
+    ['@nuxtjs/google-fonts', {
+      families: {
+        Poppins: true,
+        'Playwrite+DK+Uloopet': true
+      }
+    }],
+    ['@vee-validate/nuxt', {
+        autoImports: true,
+    }],
+  ],
+  plugins: [
+    'plugins/yup-translations'
+  ],
   css: ['~/assets/css/main.css'],
-  modules: ["@nuxtjs/tailwindcss", '@nuxtjs/color-mode', "@nuxt/image"],
   colorMode: {
     preference: 'system', 
     fallback: 'light',
@@ -15,7 +34,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      titleTemplate: "%s - PhotoPlace"
+      titleTemplate: "%s - " + process.env.APP_NAME
     }
   }
 })

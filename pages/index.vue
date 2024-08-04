@@ -6,7 +6,7 @@
             <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 
                 <NuxtLink to="/" class="flex items-center">
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Photoplace</span>
+                    <span class="app-title self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Photoplace</span>
                 </NuxtLink>
 
                 <div class="flex items-center lg:order-2">
@@ -175,7 +175,7 @@
     <footer class="bg-white dark:bg-gray-900">
         <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
             <div class="text-center">
-                <a href="#" class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white"> Photoplace </a>
+                <a href="#" class="app-title flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white"> Photoplace </a>
                 <span class="block text-sm text-center text-gray-500 dark:text-gray-400">© 2024 Photoplace™. Todos os Direitos Reservados. </span>
                 <span class="block text-sm text-center text-gray-500 dark:text-gray-400 mt-2">Construído com <a href="https://flowbite.com" class="text-purple-600 hover:underline dark:text-purple-500">Nuxt</a> and <a href="https://tailwindcss.com" class="text-purple-600 hover:underline dark:text-purple-500">Tailwind CSS</a>.</span>
             </div>

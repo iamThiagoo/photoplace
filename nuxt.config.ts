@@ -5,6 +5,11 @@ export default defineNuxtConfig({
   devServer: {
     port: Number(process.env.APP_PORT)
   },
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.APP_API_BASE_URL,
+    },
+  },
   modules: [
     "@nuxtjs/tailwindcss",
     '@nuxtjs/color-mode',
@@ -20,7 +25,8 @@ export default defineNuxtConfig({
     }],
   ],
   plugins: [
-    'plugins/yup-translations'
+    'plugins/yup-translations',
+    'plugins/fetch'
   ],
   css: ['~/assets/css/main.css'],
   colorMode: {

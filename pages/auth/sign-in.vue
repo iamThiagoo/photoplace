@@ -5,13 +5,13 @@
 			<!-- <Alert v-if="errorMessage" @closeAlert="onCloseAlert" :message="errorMessage" />-->
 			
 			<InputGroup @inputChange="onChangeName" type="text" id="name" label="Nome Completo" name="name" required="true" />
-			<ErrorMessage name="name" class="text-sm font-bold text-red-900" />
+			<ErrorMessage name="name" class="text-sm font-bold text-red-900 dark:text-red-700" />
 
 			<InputGroup @inputChange="onChangeEmail" type="email" id="email" label="Email" name="email" required="true" class="mt-6" />
-			<ErrorMessage name="email" class="text-sm font-bold text-red-900" />
+			<ErrorMessage name="email" class="text-sm font-bold text-red-900 dark:text-red-700" />
 
 			<InputGroup @inputChange="onChangePassword" type="password" id="password" label="Senha" name="password" required="true" class="mt-6" />
-			<ErrorMessage name="password" class="text-sm font-bold text-red-900" />
+			<ErrorMessage name="password" class="text-sm font-bold text-red-900 dark:text-red-700" />
 
 			<Button type="submit" id="" label="Criar Conta" :class="'bg-purple-700 mt-8'"></Button>
 		</Form>

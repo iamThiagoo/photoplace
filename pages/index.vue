@@ -12,7 +12,7 @@
                 <div class="flex items-center lg:order-2">
 
                     <button @click="toggleDarkMode($colorMode.preference === 'dark' ? 'light' : 'dark')"
-                        class="h-12 w-12 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        class="h-10 w-10 lg:h-12 lg:w-12 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
                         
                         <!-- Moon -->
                         <svg v-if="$colorMode.preference === 'light'" name="moon" class="fill-violet-700 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
@@ -27,8 +27,8 @@
                         </svg>
                     </button>
 
-                    <NuxtLink to="auth/login" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-bold rounded-lg font-medium px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Entrar</NuxtLink>
-                    <NuxtLink to="auth/sign-in" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-base px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800 font-bold">Registre-se</NuxtLink>
+                    <NuxtLink to="auth/login" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-bold rounded-lg font-medium text-xs lg:text-base px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Entrar</NuxtLink>
+                    <NuxtLink to="auth/sign-in" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs lg:text-base px-3 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800 font-bold">Registre-se</NuxtLink>
                 </div>
             </div>
         </nav>
@@ -37,7 +37,7 @@
     
     <!-- Start block -->
     <section class="bg-white dark:bg-gray-900">
-        <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12 lg:py-48">
+        <div class="grid max-w-screen-xl px-4 pt-28 lg:pt-48 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12 py-48">
             <div class="mr-auto place-self-center lg:col-span-7">
                 <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">Transforme suas fotos em lembranças eternas de forma <br> <span class="text-purple-600">gratuita</span>.</h1>
                 <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">oferecemos a você a possibilidade de armazenar suas imagens com segurança e praticidade, sem nenhum custo. Nossa plataforma intuitiva permite que você organize suas fotos com facilidade, acesse-as de qualquer lugar e compartilhe-as com quem você quiser.</p>
@@ -164,9 +164,9 @@
                 <blockquote>
                     <p class="text-xl font-medium text-gray-900 md:text-2xl dark:text-white">"O Photoplace é incrível! Fiquei realmente surpreso com o que oferecem. O serviço é rápido, ágil e possui uma excelente usabilidade."</p>
                 </blockquote>
-                <figcaption class="flex items-center justify-center mt-6 space-x-3">
-                    <img class="w-6 h-6 rounded-full" src="https://avatars.githubusercontent.com/u/69599810?v=4" alt="profile picture">
-                    <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                <figcaption class="flex flex-col lg:flex-row items-center justify-center mt-6 space-x-3">
+                    <img class="w-12 h-12 lg:w-6 lg:h-6 rounded-full" src="https://avatars.githubusercontent.com/u/69599810?v=4" alt="profile picture">
+                    <div class="flex flex-col items-center mt-2 lg:flex-row lg:divide-x-2 lg:mt-0 divide-gray-500 dark:divide-gray-700">
                         <div class="pr-3 font-medium text-gray-900 dark:text-white">Thiago Ferreira</div>
                         <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Apenas mais um usuário satisfeito</div>
                     </div>
@@ -177,7 +177,7 @@
     <!-- End block -->
     
     <footer class="bg-white dark:bg-gray-900">
-        <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
+        <div class="max-w-screen-xl p-4 py-6 pb-12 mx-auto lg:py-16 md:p-8 lg:p-10">
             <div class="text-center">
                 <a href="#" class="app-title flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white"> Photoplace </a>
                 <span class="block text-sm text-center text-gray-500 dark:text-gray-400">© 2024 Photoplace™. Todos os Direitos Reservados. </span>

@@ -15,8 +15,8 @@ Photoplace é uma aplicação web desenvolvida com NuxtJS 3, projetada para ofer
 Certifique-se de ter o Node.js e o npm (ou Yarn) instalados em sua máquina. Você pode verificar isso com:
 
 ```bash
-node -v
-npm -v
+$ node -v
+$ npm -v
 ```
 
 ### Instalando Dependências
@@ -24,9 +24,9 @@ npm -v
 Clone o repositório e instale as dependências:
 
 ```bash
-git clone https://github.com/iamThiagoo/photoplace.git
-cd photoplace
-npm install
+$ git clone https://github.com/iamThiagoo/photoplace.git
+$ cd photoplace
+$ npm install
 ```
 
 ### Servidor de Desenvolvimento
@@ -34,7 +34,7 @@ npm install
 Para iniciar o servidor de desenvolvimento e ver o aplicativo em `http://localhost:3000`, execute:
 
 ```bash
-npm run dev
+$ npm run dev
 ```
 
 ### Construção para Produção
@@ -42,13 +42,13 @@ npm run dev
 Para criar uma versão otimizada da aplicação para produção, execute:
 
 ```bash
-npm run build
+$ npm run build
 ```
 
 Depois, você pode iniciar o servidor de produção com:
 
 ```bash
-npm run start
+$ npm run start
 ```
 
 ## Documentação da API

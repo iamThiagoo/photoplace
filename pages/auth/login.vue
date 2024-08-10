@@ -1,14 +1,14 @@
 <template>
 	<NuxtLayout name="auth" :subtitle="'Um lugar seguro para todas as suas fotos'">
-		<Form @submit="onLogin" :validation-schema="schema">
+		<Form @submit="onLoginForm" :validation-schema="schema">
 
 			<Alert v-if="errorMessage" @closeAlert="onCloseAlert" type="danger" :message="errorMessage" />
 					
-			<InputGroup :type="'email'" :id="'email'" :label="'Email'" :name="'email'" />
-			<ErrorMessage name="email" class="text-sm font-bold text-red-900 dark:text-red-700" />
+			<InputGroup @change="onChangeEmail" :type="'email'" :id="'email'" :label="'Email'" :name="'email'" />
+			<ErrorMessage name="email" class="text-sm font-bold text-red-900 dark:text-red-700 mt-5" />
 	
-			<InputLoginPasswordGroup class="mt-6" />
-			<ErrorMessage name="password" class="text-sm font-bold text-red-900 dark:text-red-700" />
+			<InputLoginPasswordGroup @change="onChangePassword" class="mt-6" />
+			<ErrorMessage name="password" class="text-sm font-bold text-red-900 dark:text-red-700 mt-2" />
 					
 			<Button type="submit" label="Acessar" :class="'bg-purple-700 mt-8'"></Button>
 		</Form>
@@ -22,7 +22,11 @@
 
 <script setup lang="ts">
 
+import { ref } from 'vue';
 import * as yup from 'yup';
+import useAuth from '~/composables/api/auth';
+
+const { onLogin } = useAuth();
 
 // Page settings
 useHead({
@@ -36,12 +40,28 @@ const schema = yup.object({
 });
 
 //
-const email = ref()
-const password = ref()
-const errorMessage = ref()
+const email: Ref<string> = ref('');
+const password: Ref<string> = ref('');
+const errorMessage: Ref<string | null> = ref('');
 
-const onLogin = () => {
-	//
+const onLoginForm = async () => {
+	try {
+		await onLogin(email.value, password.value);
+	} catch (error) {
+		errorMessage.value = error.response._data.message ?? error.message;
+	}
+}
+
+const onChangeEmail = (value: string) => {
+	email.value = value;
+}
+
+const onChangePassword = (value: string) => {
+	password.value = value;
+}
+
+const onCloseAlert = async () => {
+	errorMessage.value = null;
 }
 
 </script>

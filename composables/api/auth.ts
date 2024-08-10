@@ -1,47 +1,71 @@
-import type { IUser } from "~/types/User";
+import type { IUser } from '~/types/User';
+import { useNuxtApp } from '#app';
 
-const fetch : any = useNuxtApp();
-const apiBaseUrl = process.env.APP_API_BASE_URL;
+const useAuth = () => {
 
-async function onLogin(email : string, password : string) : Promise<IUser> {
-    return await fetch('/auth', {
-        method: 'POST',
-        body: {
-            email, 
-            password
-        },
-    });
-}
+    const nuxtApp = useNuxtApp();
+    const fetch : any = nuxtApp.$fetch;
 
+    const onLogin = async (email: string, password: string): Promise<IUser> => {
+        try {
+            const response = await fetch('/auth', {
+                method: 'POST',
+                body: JSON.stringify({ email, password }),
+                headers: { 'Content-Type': 'application/json' }
+            });
 
-async function onRegister(name: string, email : string, password: string) : Promise<IUser> {
-    return await fetch('/auth/create', {
-        method: 'POST',
-        body: {
-            name,
-            email, 
-            password
-        },
-    });
-}
+            return response as IUser;
+        } catch (error) {
+            throw error;
+        }
+    };
 
+    const onRegister = async (name: string, email: string, password: string): Promise<IUser> => {
+        try {
+            const response = await fetch('/auth/create', {
+                method: 'POST',
+                body: JSON.stringify({ name, email, password }),
+                headers: { 'Content-Type': 'application/json' }
+            });
 
-async function onSendEmailToResetPassword(email: string) : Promise<Boolean> {
-    return await fetch('/auth/send-email-reset-password', {
-        method: 'POST',
-        body: {
-            email
-        },
-    }); 
-}
+            return response as IUser;
+        } catch (error) {
+            throw error;
+        }
+    };
 
+    const onSendEmailToResetPassword = async (email: string): Promise<boolean> => {
+        try {
+            const response = await fetch('/auth/send-email-reset-password', {
+                method: 'POST',
+                body: JSON.stringify({ email }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+            return response as boolean;
+        } catch (error) {
+            throw error;
+        }
+    };
 
-async function onResetPassword(token: string, password: string) : Promise<Boolean> {
-    return await fetch('/auth/reset-password', {
-        method: 'POST',
-        body: {
-            token,
-            password
-        },
-    }); 
-}
+    const onResetPassword = async (token: string, password: string): Promise<boolean> => {
+        try {
+            const response = await fetch('/auth/reset-password', {
+                method: 'POST',
+                body: JSON.stringify({ token, password }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+            return response as boolean;
+        } catch (error) {
+            throw error;
+        }
+    };
+
+    return {
+        onLogin,
+        onRegister,
+        onSendEmailToResetPassword,
+        onResetPassword
+    };
+};
+
+export default useAuth;

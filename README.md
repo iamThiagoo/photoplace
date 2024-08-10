@@ -4,11 +4,11 @@
 
 Photoplace é uma aplicação web desenvolvida com NuxtJS 3, projetada para oferecer uma experiência incrível para explorar e compartilhar fotos.
 
-## Tecnologia utilizada
+## Tecnologia Utilizada
 
-- **[NuxtJS 3](https://nuxt.com/)**: Framework para Vue.js que permite criar aplicações universais e progressivas.
+- **[NuxtJS 3](https://nuxt.com/)**: Framework para [Vue.js](https://vuejs.org/)
 
-## Como Rodar o Projeto
+## Rodando o Projeto
 
 ### Pré-requisitos
 
@@ -24,7 +24,7 @@ npm -v
 Clone o repositório e instale as dependências:
 
 ```bash
-git clone https://github.com/yourusername/photoplace.git
+git clone https://github.com/iamThiagoo/photoplace.git
 cd photoplace
 npm install
 ```

@@ -1,75 +1,60 @@
-# Nuxt 3 Minimal Starter
+# Photoplace
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+![Screenshot](https://photoplace.vercel.app/images/screenshots/2.png)
 
-## Setup
+Photoplace é uma aplicação web desenvolvida com NuxtJS 3, projetada para oferecer uma experiência incrível para explorar e compartilhar fotos.
 
-Make sure to install the dependencies:
+## Tecnologia utilizada
+
+- **[NuxtJS 3](https://nuxt.com/)**: Framework para Vue.js que permite criar aplicações universais e progressivas.
+
+## Como Rodar o Projeto
+
+### Pré-requisitos
+
+Certifique-se de ter o Node.js e o npm (ou Yarn) instalados em sua máquina. Você pode verificar isso com:
 
 ```bash
-# npm
+node -v
+npm -v
+```
+
+### Instalando Dependências
+
+Clone o repositório e instale as dependências:
+
+```bash
+git clone https://github.com/yourusername/photoplace.git
+cd photoplace
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+### Servidor de Desenvolvimento
 
-Start the development server on `http://localhost:3000`:
+Para iniciar o servidor de desenvolvimento e ver o aplicativo em `http://localhost:3000`, execute:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+### Construção para Produção
 
-Build the application for production:
+Para criar uma versão otimizada da aplicação para produção, execute:
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Depois, você pode iniciar o servidor de produção com:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+npm run start
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Documentação da API
+
+O projeto depende de uma serviço externo para a autenticação e fornecimento dos dados. O serviço criado é o **[Photoplace API](https://github.com/iamThiagoo/photoplace-api)**, construído em **[NestJS](https://nestjs.com/)**. Certifique-se de configurar e iniciar este serviço para que o aplicativo funcione corretamente.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).

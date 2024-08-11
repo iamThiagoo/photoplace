@@ -56,9 +56,9 @@
         
     <!-- Start block -->
     <section class="bg-gray-50 dark:bg-gray-800">
-        <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
+        <div class="max-w-screen-xl px-4 py-8 w-full gap-x-24 flex mx-auto lg:py-24 lg:px-6">
             <!-- Row -->
-            <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
+            <div class="items-center w-full">
                 <div class="text-gray-500 sm:text-lg dark:text-gray-400">
                     <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Integre-se com suas ferramentas favoritas</h2>
                     <p class="mb-8 font-light lg:text-xl">Ofereça experiências de armazenamento e compartilhamento de imagens de forma rápida e eficiente, sem a complexidade das soluções tradicionais de gerenciamento de mídia. Acelere o desenvolvimento e facilite a integração com suas ferramentas existentes.</p>
@@ -81,7 +81,7 @@
                 <!-- <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/feature-1.png" alt="imagem de recurso 1">-->
             </div>
             <!-- Row -->
-            <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
+            <div class="items-center w-full">
                 <div></div>
                 <!-- <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/feature-2.png" alt="imagem de recurso 2"> -->
                 <div class="text-gray-500 sm:text-lg dark:text-gray-400">
@@ -162,13 +162,13 @@
                     <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
                 </svg> 
                 <blockquote>
-                    <p class="text-xl font-medium text-gray-900 md:text-2xl dark:text-white">"O Photoplace é incrível! Fiquei realmente surpreso com o que oferecem. O serviço é rápido, ágil e possui uma excelente usabilidade."</p>
+                    <p class="text-xl font-medium text-gray-900 md:text-2xl dark:text-white">"O Photoplace é incrível! Fiquei realmente surpreso com o que oferecem. O serviço é rápido, ágil e possui uma excelente usabilidade. Google que se cuide!"</p>
                 </blockquote>
                 <figcaption class="flex flex-col lg:flex-row items-center justify-center mt-6 space-x-3">
                     <img class="w-12 h-12 lg:w-6 lg:h-6 rounded-full" src="https://avatars.githubusercontent.com/u/69599810?v=4" alt="profile picture">
                     <div class="flex flex-col items-center mt-2 lg:flex-row lg:divide-x-2 lg:mt-0 divide-gray-500 dark:divide-gray-700">
                         <div class="pr-3 font-medium text-gray-900 dark:text-white">Thiago Ferreira</div>
-                        <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Apenas mais um usuário satisfeito</div>
+                        <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Apenas mais um usuário satisfeito do Photoplace</div>
                     </div>
                 </figcaption>
             </figure>

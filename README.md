@@ -1,6 +1,6 @@
 # Photoplace
 
-![Screenshot](https://photoplace.vercel.app/images/screenshots/2.png)
+[![Screenshot](https://photoplace.vercel.app/images/screenshots/2.png)](https://photoplace.vercel.app/)
 
 Photoplace é uma aplicação web desenvolvida com NuxtJS 3, projetada para oferecer uma experiência incrível para explorar e compartilhar fotos.
 
@@ -31,7 +31,7 @@ $ npm install
 
 ### Servidor de Desenvolvimento
 
-Para iniciar o servidor de desenvolvimento e ver o aplicativo em `http://localhost:3000`, execute:
+Para iniciar o servidor de desenvolvimento e ver o aplicativo em `http://localhost:3001`, execute:
 
 ```bash
 $ npm run dev

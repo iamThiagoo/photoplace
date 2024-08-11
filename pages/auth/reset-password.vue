@@ -8,7 +8,7 @@
 			<InputGroup :type="'email'" :id="'email'" :label="'Email'" :name="'email'" />
 			<ErrorMessage name="email" class="mt-5 text-sm font-bold text-red-900 dark:text-red-700" />
 					
-			<Button type="submit" label="Enviar E-mail de Recuperação" :class="'bg-purple-700 mt-8'"></Button>
+			<Button type="submit" label="Recuperar Conta" :class="'bg-purple-700 mt-8'"></Button>
 		</Form>
 	
 		<p class="mt-10 text-sm text-center text-gray-500">

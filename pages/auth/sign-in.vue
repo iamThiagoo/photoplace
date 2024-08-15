@@ -1,16 +1,16 @@
 <template>
 	<NuxtLayout name="auth" :subtitle="'Um lugar seguro para todas as suas fotos'">
-		<Form @submit="onRegister" :validation-schema="schema">
+		<Form @submit="onRegisterForm" :validation-schema="schema">
 
-			<!-- <Alert v-if="errorMessage" @closeAlert="onCloseAlert" :message="errorMessage" />-->
-			
-			<InputGroup @inputChange="onChangeName" type="text" id="name" label="Nome Completo" name="name" required="true" />
+			<Alert v-if="errorMessage" @closeAlert="onCloseAlert" type="danger" :message="errorMessage" />
+
+			<InputGroup @change="onChangeName" type="text" id="name" label="Nome Completo" name="name" required="true" />
 			<ErrorMessage name="name" class="text-sm font-bold text-red-900 dark:text-red-700" />
 
-			<InputGroup @inputChange="onChangeEmail" type="email" id="email" label="Email" name="email" required="true" class="mt-6" />
+			<InputGroup @change="onChangeEmail" type="email" id="email" label="Email" name="email" required="true" class="mt-6" />
 			<ErrorMessage name="email" class="text-sm font-bold text-red-900 dark:text-red-700" />
 
-			<InputGroup @inputChange="onChangePassword" type="password" id="password" label="Senha" name="password" required="true" class="mt-6" />
+			<InputGroup @change="onChangePassword" type="password" id="password" label="Senha" name="password" required="true" class="mt-6" />
 			<ErrorMessage name="password" class="text-sm font-bold text-red-900 dark:text-red-700" />
 
 			<Button type="submit" id="" label="Criar Conta" :class="'bg-purple-700 mt-8'"></Button>
@@ -44,6 +44,9 @@
 <script setup lang="ts">
 
 import * as yup from 'yup';
+import useAuth from '~/composables/api/auth';
+
+const { onRegister } = useAuth();
 
 // Page settings
 useHead({
@@ -58,13 +61,41 @@ const schema = yup.object({
 });
 
 //
+const name = ref()
 const email = ref()
 const password = ref()
-const name = ref()
 const errorMessage = ref()
 
-const onLogin = () => {
-	//
+const onRegisterForm = async () => {
+	try {
+		const response = await onRegister(name.value, email.value, password.value);
+	} catch (error: any) {
+		console.error('Register error:', error);
+		
+		if (error.response && error.response._data && error.response._data.message) {
+			errorMessage.value = error.response._data.message;
+		} else if (error.message) {
+			errorMessage.value = error.message;
+		} else {
+			errorMessage.value = 'Erro desconhecido ao tentar fazer login.';
+		}
+	}
+}
+
+const onChangeName = (value: string) => {
+	name.value = value;
+}
+
+const onChangeEmail = (value: string) => {
+	email.value = value;
+}
+
+const onChangePassword = (value: string) => {
+	password.value = value;
+}
+
+const onCloseAlert = async () => {
+	errorMessage.value = null;
 }
 
 </script>

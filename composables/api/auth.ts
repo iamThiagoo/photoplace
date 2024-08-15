@@ -6,7 +6,7 @@ const useAuth = () => {
     const nuxtApp = useNuxtApp();
     const fetch : any = nuxtApp.$fetch;
 
-    const onLogin = async (email: string, password: string): Promise<IUser> => {
+    const onLogin = async (email: string, password: string): Promise<string> => {
         try {
             const response = await fetch('/auth', {
                 method: 'POST',
@@ -14,13 +14,14 @@ const useAuth = () => {
                 headers: { 'Content-Type': 'application/json' }
             });
 
-            return response as IUser;
+            localStorage.setItem('token', response.data);
+            return response.data;
         } catch (error) {
             throw error;
         }
     };
 
-    const onRegister = async (name: string, email: string, password: string): Promise<IUser> => {
+    const onRegister = async (name: string, email: string, password: string): Promise<string>  => {
         try {
             const response = await fetch('/auth/create', {
                 method: 'POST',
@@ -28,7 +29,9 @@ const useAuth = () => {
                 headers: { 'Content-Type': 'application/json' }
             });
 
-            return response as IUser;
+            localStorage.setItem('token', response);
+            return response;
+
         } catch (error) {
             throw error;
         }
@@ -60,11 +63,16 @@ const useAuth = () => {
         }
     };
 
+    const isAuthenticated = () : boolean => {
+        return localStorage.getItem('token') ? true : false;
+    }
+
     return {
         onLogin,
         onRegister,
         onSendEmailToResetPassword,
-        onResetPassword
+        onResetPassword,
+        isAuthenticated
     };
 };
 

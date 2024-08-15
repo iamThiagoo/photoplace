@@ -10,7 +10,7 @@
 			<InputLoginPasswordGroup @change="onChangePassword" class="mt-6" />
 			<ErrorMessage name="password" class="text-sm font-bold text-red-900 dark:text-red-700 mt-2" />
 					
-			<Button type="submit" label="Acessar" :class="'bg-purple-700 mt-8'"></Button>
+			<Button type="submit" label="Acessar" :class="'bg-purple-700 mt-8'" />
 
 			<div class="flex items-center justify-between mt-6 mb-6">
 				<span class="w-2/5 border-b dark:border-gray-600 lg:w-2/6"></span>
@@ -45,6 +45,10 @@ import useAuth from '~/composables/api/auth';
 
 const { onLogin } = useAuth();
 
+const props = defineProps({
+	errorMessage: String | undefined
+});
+
 // Page settings
 useHead({
     title: "Entrar"
@@ -61,11 +65,23 @@ const email: Ref<string> = ref('');
 const password: Ref<string> = ref('');
 const errorMessage: Ref<string | null> = ref('');
 
+watch( props.errorMessage, (newValue : string) => {
+	errorMessage.value = newValue;
+});
+
 const onLoginForm = async () => {
 	try {
-		await onLogin(email.value, password.value);
-	} catch (error) {
-		errorMessage.value = error.response._data.message ?? error.message;
+		const response = await onLogin(email.value, password.value);
+	} catch (error: any) {
+		console.error('Login error:', error);
+		
+		if (error.response && error.response._data && error.response._data.message) {
+			errorMessage.value = error.response._data.message;
+		} else if (error.message) {
+			errorMessage.value = error.message;
+		} else {
+			errorMessage.value = 'Erro desconhecido ao tentar fazer login.';
+		}
 	}
 }
 

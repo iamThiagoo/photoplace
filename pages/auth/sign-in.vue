@@ -44,9 +44,9 @@
 <script setup lang="ts">
 
 import * as yup from 'yup';
-import useAuth from '~/composables/api/auth';
+import useAuthApi from '~/composables/api/auth';
 
-const { onRegister } = useAuth();
+const { onRegister } = useAuthApi();
 
 // Page settings
 useHead({
@@ -69,6 +69,8 @@ const errorMessage = ref()
 const onRegisterForm = async () => {
 	try {
 		const response = await onRegister(name.value, email.value, password.value);
+		if (response) useRouter().push({name: "home"})
+
 	} catch (error: any) {
 		console.error('Register error:', error);
 		

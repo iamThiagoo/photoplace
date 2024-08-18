@@ -41,13 +41,13 @@
 
 import { ref } from 'vue';
 import * as yup from 'yup';
-import useAuth from '~/composables/api/auth';
+import useAuthApi from '~/composables/api/auth';
 
-const { onLogin } = useAuth();
+const { onLogin } = useAuthApi();
 
-const props = defineProps({
-	errorMessage: String | undefined
-});
+const props = defineProps<{
+  errorMessage?: string;
+}>();
 
 // Page settings
 useHead({
@@ -65,13 +65,15 @@ const email: Ref<string> = ref('');
 const password: Ref<string> = ref('');
 const errorMessage: Ref<string | null> = ref('');
 
-watch( props.errorMessage, (newValue : string) => {
-	errorMessage.value = newValue;
+watch( () => props.errorMessage, (newValue) => {
+	errorMessage.value = newValue || '';
 });
 
 const onLoginForm = async () => {
 	try {
 		const response = await onLogin(email.value, password.value);
+		if (response) useRouter().push({name: "home"})
+
 	} catch (error: any) {
 		console.error('Login error:', error);
 		

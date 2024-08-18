@@ -1,7 +1,7 @@
 import type { IUser } from '~/types/User';
 import { useNuxtApp } from '#app';
 
-const useAuth = () => {
+const useAuthApiApi = () => {
 
     const nuxtApp = useNuxtApp();
     const fetch : any = nuxtApp.$fetch;
@@ -63,17 +63,12 @@ const useAuth = () => {
         }
     };
 
-    const isAuthenticated = () : boolean => {
-        return localStorage.getItem('token') ? true : false;
-    }
-
     return {
         onLogin,
         onRegister,
         onSendEmailToResetPassword,
-        onResetPassword,
-        isAuthenticated
+        onResetPassword
     };
 };
 
-export default useAuth;
+export default useAuthApiApi;

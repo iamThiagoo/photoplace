@@ -1,6 +1,10 @@
 # Photoplace
 
-[![Screenshot](https://photoplace.vercel.app/images/screenshots/2.png)](https://photoplace.vercel.app/)
+
+<div>
+    <img src="public/images/screenshots/2.png" width="49.5%" />
+    <img src="public/images/screenshots/3.png" width="49.5%" />
+</div>
 
 Photoplace é uma aplicação web desenvolvida com NuxtJS 3, projetada para oferecer uma experiência incrível para explorar e compartilhar fotos.
 

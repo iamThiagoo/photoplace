@@ -18,26 +18,26 @@
                 </div>
             </div>
 
-            <div x-cloak class="inset-x-0 z-20 w-full py-4 transition-all duration-300 ease-in-out md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
+            <div x-cloak class="z-20 w-full py-4 transition-all duration-300 ease-in-out md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
                 <div class="flex flex-col md:flex-row">
                     <div class="flex flex-row items-center">
 
                         <!-- Search -->
-                        <form class="max-w-xl mx-auto">   
+                        <form class="w-3xl mx-auto">   
                             <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                            <div class="relative">
+                            <div class="relative w-96">
                                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                     <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                                     </svg>
                                 </div>
-                                <input type="search" id="default-search" class="placeholder-gray-700 block w-full p-2 ps-10 text-sm text-gray-900 border-2 border-gray-700 rounded-lg bg-gray-50 focus:ring-violet-500 focus:border-violet-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500" placeholder="Pesquise por arquivos, pastas..." />
+                                <input type="search" id="default-search" class="placeholder-gray-700 block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-700 outline-none rounded-lg bg-gray-50 focus:ring-violet-500 focus:border-violet-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500" placeholder="Pesquise por arquivos, pastas..." />
                             </div>
                         </form>
 
                         <DarkModeButton class="ml-4 mt-0" />
 
-                        <div class="hover:opacity-90 p-1.5 flex items-center ml-2 text-base gap-x-1 inline-block cursor-pointer text-violet-700 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100">
+                        <div @click="toggleIsOpen" class="hover:opacity-90 p-1.5 flex items-center ml-2 text-base gap-x-1 inline-block cursor-pointer text-violet-700 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100">
                             <img src="https://www.gravatar.com/avatar/29b5fba9a4441ad42db541f0568d486a" class="h-10 w-10 rounded-lg">
                         </div>
                     </div>
@@ -46,15 +46,9 @@
         </div>
     </nav>
 
-    <div x-show="isOpen"
-        x-transition:enter="transition ease-out duration-100"
-        x-transition:enter-start="opacity-0 scale-90"
-        x-transition:enter-end="opacity-100 scale-100"
-        x-transition:leave="transition ease-in duration-100"
-        x-transition:leave-start="opacity-100 scale-100"
-        x-transition:leave-end="opacity-0 scale-90"
-        class="absolute top-16 right-4 z-20 w-52 py-2 mt-2 border-2 border-violet-500 origin-top-right bg-white rounded-md shadow-xl dark:bg-gray-800"
-    >
+    <div 
+        v-show="isOpen"
+        class="absolute top-16 right-4 z-20 w-52 py-2 mt-2 border-2 border-violet-500 origin-top-right bg-white rounded-md shadow-xl dark:bg-gray-800">
         <a href="#" class="flex items-center px-3 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
             <svg class="w-5 h-5 mx-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8ZM12 11C13.6569 11 15 9.65685 15 8C15 6.34315 13.6569 5 12 5C10.3431 5 9 6.34315 9 8C9 9.65685 10.3431 11 12 11Z" fill="currentColor"></path>
@@ -87,3 +81,16 @@
         </a>
     </div>
 </template>
+
+
+<script setup lang="ts">
+
+import { ref } from 'vue'
+
+const isOpen = ref(false)
+
+const toggleIsOpen = () => {
+    isOpen.value = !isOpen.value
+}
+
+</script>

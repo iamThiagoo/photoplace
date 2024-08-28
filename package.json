@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -17,6 +17,7 @@
     "@sidebase/nuxt-auth": "^0.8.2",
     "@vee-validate/nuxt": "^4.13.2",
     "@vee-validate/yup": "^4.13.2",
+    "flowbite": "^2.5.1",
     "nuxt": "^3.12.4",
     "vue": "latest",
     "yup": "^1.4.0"

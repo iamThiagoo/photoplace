@@ -3,7 +3,7 @@
         <template #content>
             <div class="pt-10 font-lg">
                 <div class="flex justify-between">
-                    <h3 class="text-2xl font-lg dark:text-white">
+                    <h3 class="text-2xl text-slate-608 font-lg font-bold dark:text-white">
                         📁 Seus últimos Uploads...
                     </h3>
                     <div class="flex overflow-hidden bg-white border border-gray-700 divide-x divide-gray-700 rounded-lg dark:bg-gray-900 dark:border-gray-700 dark:divide-gray-700">
@@ -25,7 +25,7 @@
 
                 <section>
                     <div class="animate-pulse">
-                        <div class="grid grid-cols-1 gap-10 mt-6 xl:mt-12 xl:gap-12 sm:grid-cols-2 xl:grid-cols-5 2xl:grid-cols-8 lg:grid-cols-3">
+                        <div class="grid grid-cols-1 gap-10 mt-6 xl:mt-12 xl:gap-12 sm:grid-cols-2 xl:grid-cols-5 2xl:grid-cols-6 lg:grid-cols-3">
                             <div class="w-full cursor-pointer hover:opacity-80">
                                 <div class="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600">
                                     <img class="w-full h-64 object-cover rounded-lg" src="https://images.unsplash.com/photo-1723754166148-2ceb2d84890f?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
@@ -66,42 +66,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--<div class="w-full cursor-pointer hover:opacity-80">
-                                <div class="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
-                                
-                                <h1 class="w-32 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-                                <p class="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-                            </div>
                             <div class="w-full cursor-pointer hover:opacity-80">
                                 <div class="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
                                 
                                 <h1 class="w-32 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
                                 <p class="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
                             </div>
-                            <div class="w-full cursor-pointer hover:opacity-80">
-                                <div class="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
-                                
-                                <h1 class="w-32 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-                                <p class="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-                            </div>
-                            <div class="w-full cursor-pointer hover:opacity-80">
-                                <div class="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
-                                
-                                <h1 class="w-32 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-                                <p class="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-                            </div>
-                            <div class="w-full cursor-pointer hover:opacity-80">
-                                <div class="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
-                                
-                                <h1 class="w-32 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-                                <p class="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-                            </div>
-                            <div class="w-full cursor-pointer hover:opacity-80">
-                                <div class="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
-                                
-                                <h1 class="w-32 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-                                <p class="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-                            </div>-->
+                        
                         </div>
                     </div>
                 </section>

@@ -14,13 +14,10 @@
 
 <script setup lang="ts">
 
-import SidebarItem from './SidebarItem.vue';
-
-import homeIcon   from '@/assets/svg/icons/home.svg?raw';
-import folderIcon from '@/assets/svg/icons/folder.svg?raw';
-import starIcon   from '@/assets/svg/icons/star.svg?raw';
-import graphIcon  from '@/assets/svg/icons/graph.svg?raw';
-import trashIcon  from '@/assets/svg/icons/trash.svg?raw';
-
+import homeIcon   from 'public/svg/icons/home.svg?raw';
+import folderIcon from 'public/svg/icons/folder.svg?raw';
+import starIcon   from 'public/svg/icons/star.svg?raw';
+import graphIcon  from 'public/svg/icons/graph.svg?raw';
+import trashIcon  from 'public/svg/icons/trash.svg?raw'; 
 
 </script>

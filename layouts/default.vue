@@ -6,14 +6,9 @@
     </div>
 
     <section
-        :data-active="active" 
-        class="dark:bg-gray-800 w-full relative top-16 min-h-[calc(100vh-64px)]" 
-        @dragenter.prevent="setActive" 
-        @dragover.prevent="setActive" 
-        @dragleave.prevent="setInactive"
-        @drop.prevent="onDrop">
+        class="dark:bg-gray-800 w-full relative top-16 min-h-[calc(100vh-64px)]">
         <div class="relative mx-auto w-10/12">
-            <slot name="content" :dropZoneActive="active"></slot>
+            <slot name="content"></slot>
         </div>
     </section>
 </template>

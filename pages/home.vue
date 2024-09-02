@@ -6,57 +6,62 @@
                     <h3 class="text-2xl text-slate-608 font-lg font-bold dark:text-white">
                         📁 Seus últimos Uploads...
                     </h3>
-
-                    <form>
-                        <div class="flex overflow-hidden bg-white border border-gray-700 divide-x divide-gray-700 rounded-lg dark:bg-gray-900 dark:border-gray-700 dark:divide-gray-700">
-                            <div>
-                                <input 
-                                    name="file"
-                                    as="file"
-                                    type="file"
-                                    class="hidden"
-                                    id="file-button"
-                                    multiple
-                                    @change="handleFileChange"
-                                />
-                                <label
-                                    for="file-button"
-                                    class="select-none cursor-pointer flex items-center px-3 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 sm:text-base sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 gap-x-3 hover:bg-gray-100">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m3.75 9v6m3-3H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                                    </svg>
-                                    <span class="text-sm">Upload de Arquivo</span>
-                                </label>
-                            </div>
-    
-                            <div>
-                                <input 
-                                    name="file"
-                                    as="file"
-                                    id="folder-button"
-                                    class="hidden"
-                                    type="file"
-                                    multiple 
-                                    webkitdirectory
-                                    @change="handleFileChange"
-                                />
-                                <label
-                                    for="folder-button"
-                                    class="select-none cursor-pointer flex items-center px-3 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 sm:text-base sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 gap-x-3 hover:bg-gray-100">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 10.5v6m3-3H9m4.06-7.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
-                                    </svg>
-                                    <span class="text-sm">Upload de Pasta</span>
-                                </label>
-                            </div>
+                    
+                    <div class="flex overflow-hidden bg-white border border-gray-700 divide-x divide-gray-700 rounded-lg dark:bg-gray-900 dark:border-gray-700 dark:divide-gray-700">
+                        <div>
+                            <input 
+                                name="file"
+                                as="file"
+                                type="file"
+                                class="hidden"
+                                id="file-button"
+                                multiple
+                                @change="handleFileChange"
+                            />
+                            <label
+                                for="file-button"
+                                class="select-none cursor-pointer flex items-center px-3 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 sm:text-base sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 gap-x-3 hover:bg-gray-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m3.75 9v6m3-3H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                                <span class="text-sm">Upload de Arquivo</span>
+                            </label>
                         </div>
-                    </form>
+
+                        <div>
+                            <input 
+                                name="file"
+                                as="file"
+                                id="folder-button"
+                                class="hidden"
+                                type="file"
+                                multiple 
+                                webkitdirectory
+                                @change="handleFileChange"
+                            />
+                            <label
+                                for="folder-button"
+                                class="select-none cursor-pointer flex items-center px-3 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 sm:text-base sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 gap-x-3 hover:bg-gray-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 10.5v6m3-3H9m4.06-7.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                </svg>
+                                <span class="text-sm">Upload de Pasta</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
-                <section>
+                <section 
+                    id="drop-area"
+                    @dragenter.prevent="handleDragEnter"
+                    @dragover.prevent="handleDragOver"
+                    @dragleave.prevent="handleDragLeave"
+                    @drop.prevent="handleFileChange"
+                    ref="dropArea"
+                    class="mt-8 rounded-lg">
                     <div 
                         class="text-slate-600 dark:text-white flex justify-center items-center w-full items-center flex-col"
-                        style="min-height: calc(100vh - 145px);">
+                        style="min-height: calc(100vh - 200px);">
                         <NuxtImg src="/svg/icons/no-data.svg" class="h-48" />
                         <h2 class="text-2xl mt-5">Nenhum upload foi encontrado!</h2>
                         <p class="mt-2">Arraste ou <label for="file-button" class="cursor-pointer text-sky-400 hover:opacity-90">clique aqui para escolher</label></p>
@@ -127,9 +132,40 @@ useHead({
     title: "Home"
 })
 
+const dropArea = ref()
+
 const handleFileChange = (event : any) => {
-    const files = event.target.files;
-    console.log(files[0]);
+    let files = event.type === 'drop' ? event.dataTransfer.files : event.target.files;
+    console.log(files);
+}
+
+const handleDragEnter = (event : any) => {
+    if (dropArea.value) {
+        dropArea.value.classList.add('bg-violet-100');
+        dropArea.value.classList.add('dark:bg-gray-700');
+    }
+}
+
+const handleDragOver = (event : any) => {
+    if (dropArea.value) {
+        dropArea.value.classList.add('bg-violet-100');
+        dropArea.value.classList.add('dark:bg-gray-700');
+    }
+}
+
+const handleDragLeave = (event : any) => {
+    if (dropArea.value) {
+        dropArea.value.classList.remove('bg-violet-100');
+        dropArea.value.classList.remove('dark:bg-gray-700');
+    }        
 }
 
 </script>
+
+<style scoped>
+
+#drop-area.dragover {
+  opacity: .6;
+}
+
+</style>

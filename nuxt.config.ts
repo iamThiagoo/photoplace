@@ -9,9 +9,11 @@ export default defineNuxtConfig({
     public: {
       apiBaseUrl: process.env.APP_API_BASE_URL,
     },
-  },
+},
   modules: [
     "@nuxtjs/tailwindcss",
+    '@pinia/nuxt',
+    "@pinia-plugin-persistedstate/nuxt",
     '@nuxtjs/color-mode',
     "@nuxt/image",
     ['@nuxtjs/google-fonts', {

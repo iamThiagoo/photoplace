@@ -1,6 +1,6 @@
 import { useNuxtApp } from '#app';
 
-const useAuthApiApi = () => {
+const useAuthApi = () => {
 
     const nuxtApp = useNuxtApp();
     const fetch : any = nuxtApp.$fetch;
@@ -22,4 +22,4 @@ const useAuthApiApi = () => {
     };
 };
 
-export default useAuthApiApi;
+export default useAuthApi;

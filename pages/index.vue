@@ -48,7 +48,7 @@
                 </div>
             </div>     
             <div class="hidden flex justify-center lg:mt-0 lg:col-span-5 lg:flex">
-                <NuxtImg src="/images/banner.png" class="w-11/12" alt="Banner" />
+                <img src="/images/banner.png" class="w-11/12" alt="Banner" />
             </div>        
         </div>
     </section>

@@ -1,10 +1,11 @@
-import type { IUser } from '~/types/User';
 import { useNuxtApp } from '#app';
+import { useAuthStore } from '~/stores/auth';
 
-const useAuthApiApi = () => {
-
+const useAuthApi = () => {
+    
     const nuxtApp = useNuxtApp();
     const fetch : any = nuxtApp.$fetch;
+    const authStore = useAuthStore();
 
     const onLogin = async (email: string, password: string): Promise<string> => {
         try {
@@ -14,8 +15,10 @@ const useAuthApiApi = () => {
                 headers: { 'Content-Type': 'application/json' }
             });
 
-            localStorage.setItem('token', response.data);
-            return response.data;
+            authStore.setUser(response.user);
+            authStore.setToken(response.token);
+
+            return response;
         } catch (error) {
             throw error;
         }
@@ -29,9 +32,10 @@ const useAuthApiApi = () => {
                 headers: { 'Content-Type': 'application/json' }
             });
 
-            localStorage.setItem('token', response);
-            return response;
+            authStore.setUser(response.user);
+            authStore.setToken(response.token);
 
+            return response;
         } catch (error) {
             throw error;
         }
@@ -71,4 +75,4 @@ const useAuthApiApi = () => {
     };
 };
 
-export default useAuthApiApi;
+export default useAuthApi;
